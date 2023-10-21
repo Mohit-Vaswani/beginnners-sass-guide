@@ -1,0 +1,49 @@
+// Variables in scss
+$color1: #dbdbdb; 
+$color2: #F875AA;
+$large: 1.2rem;
+$small: 0.5rem;
+
+// We can also make an array of variable
+
+$bgColor: #ED7D31, #303030, #7752FE;
+
+
+// Scss provides nesting
+
+body{
+    margin: 0;
+    padding: 0;
+    color: $color1; // This is how you can access a variable
+    background: nth($bgColor, 2); // This is how you access any nth child class from array
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    #app{
+        h1{
+            font-size: 2rem;
+            text-align: center;
+        }
+        ol{
+            line-height: 2;
+            li{
+                font-size: $large;
+                a{
+                    color: nth($bgColor , 3 );
+                }
+            }
+        }
+    }
+
+    // We can also give some specific properties to any element according to our needs.
+
+    .productCard{
+        width: 300px;
+        background: blueviolet;
+        > a {
+            color: aquamarine;
+        }
+        > p {
+            font-size: 2rem;
+        }
+    }
+}
